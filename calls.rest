@@ -1,0 +1,12 @@
+### get all
+GET http://localhost:8081/api/employee
+
+### post all
+POST http://localhost:8081/api/employee
+Content-Type: application/json
+
+{
+    "Age":12,
+    "City":"Nacka",
+    "Namn": "Kalle"
+}
