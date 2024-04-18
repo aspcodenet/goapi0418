@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"main/data"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,6 +12,19 @@ import (
 func handleGetEmployees(c *gin.Context) {
 	emps := data.GetAllEmployees()
 	c.IndentedJSON(http.StatusOK, emps)
+}
+
+func handleOneEmployee(c *gin.Context) {
+	id := c.Param("id")
+
+	numId, _ := strconv.Atoi(id)
+
+	employee := data.GetEmployee(numId)
+	if employee == nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Finns inte"})
+	} else {
+		c.JSON(http.StatusOK, employee)
+	}
 }
 
 func handleNewEmployees(c *gin.Context) {
@@ -20,7 +35,7 @@ func handleNewEmployees(c *gin.Context) {
 		return
 	}
 	data.SaveEmployee(employee)
-	c.JSON(http.StatusCreated, employee)
+	c.IndentedJSON(http.StatusCreated, employee)
 }
 
 func handleStartPage(c *gin.Context) {
@@ -38,11 +53,10 @@ func main() {
 
 	r.GET("/", handleStartPage)
 	r.GET("/api/employee", handleGetEmployees)
+	r.GET("/api/employee/:id", handleOneEmployee)
 	r.POST("/api/employee", handleNewEmployees)
 
 	r.Run(":8081")
 
-	// for _, emp := range emps {
-	// 	fmt.Println(emp)
-	// }
+	fmt.Println("312123213")
 }

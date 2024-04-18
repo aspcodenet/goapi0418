@@ -10,6 +10,15 @@ func SaveEmployee(newEmployee Employee) {
 	employees = append(employees, newEmployee)
 }
 
+func GetEmployee(id int) *Employee {
+	for _, employee := range employees {
+		if employee.Id == id {
+			return &employee
+		}
+	}
+	return nil
+}
+
 func Init() {
 
 	employees = append(employees, Employee{Id: 1, Age: 51, Namn: "Stefan", City: "Test"})

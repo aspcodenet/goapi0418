@@ -10,3 +10,7 @@ Content-Type: application/json
     "City":"Nacka",
     "Namn": "Kalle"
 }
+
+
+### get Josefine
+GET http://localhost:8081/api/employee/3
