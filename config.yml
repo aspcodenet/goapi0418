@@ -1,7 +1,7 @@
 database:
-    file: "db123.sqlite"
-    sql-user: ""            #
-    sql-pass: ""
+    file: ""
+    sql-user: "root"            #
+    sql-pass: "hejsan123"
     sql-server: "127.0.0.1"
-    sql-database: "SupportSystem"
+    sql-database: "Demo0423"
     sql-port: 3306

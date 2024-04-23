@@ -56,7 +56,12 @@ func main() {
 	readConfig(&config)
 	fmt.Println(config)
 	//	emps := data.GetAl
-	data.InitDatabase(config.Database.File)
+	data.InitDatabase(config.Database.File,
+		config.Database.Server,
+		config.Database.Database,
+		config.Database.Username,
+		config.Database.Password,
+		config.Database.Port)
 
 	fmt.Println(config)
 	//	emps := data.GetAllEmployees()
