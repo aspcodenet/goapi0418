@@ -1,8 +1,8 @@
 ### get all
-GET http://localhost:8081/api/employee
+GET http://localhost:8080/api/employee
 
 ### post all
-POST http://localhost:8081/api/employee
+POST http://localhost:8080/api/employee
 Content-Type: application/json
 
 {

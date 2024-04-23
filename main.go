@@ -1,41 +1,41 @@
 package main
 
 import (
-	"fmt"
 	"main/data"
 	"net/http"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
 func handleGetEmployees(c *gin.Context) {
-	emps := data.GetAllEmployees()
-	c.IndentedJSON(http.StatusOK, emps)
+	var employees []data.Employee
+	data.DB.Find(&employees)
+
+	c.IndentedJSON(http.StatusOK, employees)
 }
 
 func handleOneEmployee(c *gin.Context) {
-	id := c.Param("id")
+	// id := c.Param("id")
 
-	numId, _ := strconv.Atoi(id)
+	// numId, _ := strconv.Atoi(id)
 
-	employee := data.GetEmployee(numId)
-	if employee == nil {
-		c.JSON(http.StatusNotFound, gin.H{"error": "Finns inte"})
-	} else {
-		c.JSON(http.StatusOK, employee)
-	}
+	// employee := data.GetEmployee(numId)
+	// if employee == nil {
+	// 	c.JSON(http.StatusNotFound, gin.H{"error": "Finns inte"})
+	// } else {
+	// 	c.JSON(http.StatusOK, employee)
+	// }
 }
 
 func handleNewEmployees(c *gin.Context) {
-	// TODO Add new
-	// försöka få fram den JSON Employee som man skickat in
-	var employee data.Employee
-	if err := c.BindJSON(&employee); err != nil {
-		return
-	}
-	data.SaveEmployee(employee)
-	c.IndentedJSON(http.StatusCreated, employee)
+	// // TODO Add new
+	// // försöka få fram den JSON Employee som man skickat in
+	// var employee data.Employee
+	// if err := c.BindJSON(&employee); err != nil {
+	// 	return
+	// }
+	// data.SaveEmployee(employee)
+	// c.IndentedJSON(http.StatusCreated, employee)
 }
 
 func handleStartPage(c *gin.Context) {
@@ -43,7 +43,7 @@ func handleStartPage(c *gin.Context) {
 }
 
 func main() {
-	data.Init()
+	data.InitDatabase()
 	//	emps := data.GetAllEmployees()
 
 	// GET
@@ -56,7 +56,7 @@ func main() {
 	r.GET("/api/employee/:id", handleOneEmployee)
 	r.POST("/api/employee", handleNewEmployees)
 
-	r.Run(":8081")
+	r.Run(":8080")
 
-	fmt.Println("312123213")
+	//fmt.Println("312123213")
 }
