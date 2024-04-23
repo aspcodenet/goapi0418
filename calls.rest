@@ -6,11 +6,11 @@ POST http://localhost:8080/api/employee
 Content-Type: application/json
 
 {
-    "Age":12,
-    "City":"Nacka",
-    "Namn": "Kalle"
+    "Age":99,
+    "City":"Test",
+    "Namn": "Anders"
 }
 
 
 ### get Josefine
-GET http://localhost:8081/api/employee/3
+GET http://localhost:8080/api/employee/3

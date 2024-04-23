@@ -8,8 +8,8 @@ import (
 
 var DB *gorm.DB
 
-func InitDatabase() {
-	DB, _ = gorm.Open(sqlite.Open("database.sqlite"), &gorm.Config{})
+func InitDatabase(filename string) {
+	DB, _ = gorm.Open(sqlite.Open(filename), &gorm.Config{})
 	DB.AutoMigrate(&Employee{}) // SYNKAR databas med kod KOD = sanningen
 	var antal int64
 	DB.Model(&Employee{}).Count(&antal) // Seed

@@ -1,0 +1,7 @@
+database:
+    file: "db123.sqlite"
+    sql-user: ""            #
+    sql-pass: ""
+    sql-server: "127.0.0.1"
+    sql-database: "SupportSystem"
+    sql-port: 3306
