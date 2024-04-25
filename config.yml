@@ -1,5 +1,5 @@
 database:
-    file: database.sqlite""
+    file: "database.sqlite"
     sql-user: "root"            #
     sql-pass: "hejsan123"
     sql-server: "127.0.0.1"

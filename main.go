@@ -79,6 +79,8 @@ func handleStartPage(c *gin.Context) {
 	c.Data(http.StatusOK, "text/html; charset=utf-8", []byte("<html><body><h1>Hej hopp</h1><ul><li>Test</li><li>Bla</li></ul></body></html>"))
 }
 
+// hej
+
 var config Config
 
 func main() {
@@ -105,6 +107,7 @@ func main() {
 	r.GET("/api/employee/:id", handleOneEmployee)
 	r.POST("/api/employee", handleNewEmployees)
 	r.PUT("/api/employee/:id", apiEmployeeUpdateById)
+	r.PATCH("/api/employee/:id", apiEmployeeUpdateById)
 
 	r.DELETE("/api/employee/:id", apiEmployeeDeleteById)
 
