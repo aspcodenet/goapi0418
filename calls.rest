@@ -14,3 +14,18 @@ Content-Type: application/json
 
 ### get Josefine
 GET http://localhost:8080/api/employee/3
+
+### update
+PUT http://localhost:8080/api/employee/3
+Content-Type: application/json
+
+{
+    "Age":22,
+    "City":"Uppsala",
+    "Namn": "Josefine2"
+}
+
+
+### delete
+DELETE http://localhost:8080/api/employee/3
+
