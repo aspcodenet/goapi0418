@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"main/data"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -76,7 +77,8 @@ func apiEmployeeDeleteById(c *gin.Context) {
 }
 
 func handleStartPage(c *gin.Context) {
-	c.Data(http.StatusOK, "text/html; charset=utf-8", []byte("<html><body><h1>Hej hopp</h1><ul><li>Test</li><li>Bla</li></ul></body></html>"))
+	name, _ := os.Hostname()
+	c.Data(http.StatusOK, "text/html; charset=utf-8", []byte("<html><body><h1>Hej hopp</h1><ul><li>Dator:"+name+"</li><li>Bla</li></ul></body></html>"))
 }
 
 // hej

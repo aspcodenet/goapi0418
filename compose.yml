@@ -1,0 +1,19 @@
+services:
+  app1:
+    image: git.systementor.se/yacloud/stefansgoapi
+    ports:
+      - "8080:8080" #http:/localhost://8080
+  app2:
+    image: git.systementor.se/yacloud/stefansgoapi
+    ports:
+      - "8081:8080" #http:/localhost://8081
+  mysql01:
+    container_name: mysql01
+    image: mysql
+    environment:
+      MYSQL_DATABASE: "Demo0423"
+      MYSQL_ROOT_PASSWORD: "hejsan123"
+      MYSQL_HOST: "mysql01"
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - "3306:3306"

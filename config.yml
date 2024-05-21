@@ -1,7 +1,7 @@
 database:
-    file: "database.sqlite"
+    file: ""
     sql-user: "root"            #
     sql-pass: "hejsan123"
-    sql-server: "127.0.0.1"
+    sql-server: "mysql01"
     sql-database: "Demo0423"
     sql-port: 3306
