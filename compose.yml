@@ -13,7 +13,5 @@ services:
     environment:
       MYSQL_DATABASE: "Demo0423"
       MYSQL_ROOT_PASSWORD: "hejsan123"
-      MYSQL_HOST: "mysql01"
-      MYSQL_ROOT_HOST: "%"
     ports:
       - "3306:3306"
