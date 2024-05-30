@@ -23,4 +23,4 @@ stages:
           script: |
             docker build -t git.systementor.se/yacloud/stefan2stefan240530 .
             docker login -u yacloud -p yacloud1 https://git.systementor.se
-            docker push git.systementor.se/yacloud/stefan240530
+            docker push git.systementor.se/yacloud/stefan2stefan240530
