@@ -1,6 +1,6 @@
 version: 0.2
         
-phases:
+psesha:
   build:
     commands:
       - docker build -t git.systementor.se/yacloud/stefan0306 .
