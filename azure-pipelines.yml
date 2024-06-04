@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - task: CmdLine@2
+        inputs:
+          script: |
+            docker build -t git.systementor.se/yacloud/stefan2stefan240530 .
+            docker login -u yacloud -p yacloud1 https://git.systementor.se
+            docker push git.systementor.se/yacloud/stefan2stefan240530
