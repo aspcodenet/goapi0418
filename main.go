@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"main/data"
+	"goapi0418/data"
 	"net/http"
 	"os"
 	"strconv"

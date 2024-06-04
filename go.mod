@@ -1,4 +1,4 @@
-module main
+module goapi0418
 
 go 1.19
 
