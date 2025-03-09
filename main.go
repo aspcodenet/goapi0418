@@ -12,6 +12,8 @@ import (
 	"gorm.io/gorm"
 )
 
+// hello
+
 func handleGetEmployees(c *gin.Context) {
 	var employees []data.Employee
 	data.DB.Find(&employees)
@@ -78,7 +80,7 @@ func apiEmployeeDeleteById(c *gin.Context) {
 
 func handleStartPage(c *gin.Context) {
 	name, _ := os.Hostname()
-	c.Data(http.StatusOK, "text/html; charset=utf-8", []byte("<html><body><h1>Hej hopp</h1><ul><li>Dator:"+name+"</li><li>Bla</li></ul></body></html>"))
+	c.Data(http.StatusOK, "text/html; charset=utf-8", []byte("<html><body><h1>Hej hopp2</h1><ul><li>Dator:"+name+"</li><li>Bla</li></ul></body></html>"))
 }
 
 // hej
